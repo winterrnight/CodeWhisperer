@@ -1,0 +1,55 @@
+{
+  "name": "UserProgress",
+  "type": "object",
+  "properties": {
+    "tutorial_id": {
+      "type": "string",
+      "description": "ID of the tutorial"
+    },
+    "completion_status": {
+      "type": "string",
+      "enum": [
+        "not_started",
+        "in_progress",
+        "completed"
+      ],
+      "default": "not_started"
+    },
+    "completion_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the tutorial was completed"
+    },
+    "time_spent": {
+      "type": "number",
+      "description": "Time spent on this tutorial in minutes"
+    },
+    "mastery_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "User's mastery level of this tutorial's concepts"
+    },
+    "notes": {
+      "type": "string",
+      "description": "User's personal notes on this tutorial"
+    }
+  },
+  "required": [
+    "tutorial_id"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}",
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "write": {
+      "created_by": "{{user.email}}",
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

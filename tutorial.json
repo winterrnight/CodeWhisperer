@@ -1,0 +1,72 @@
+{
+  "name": "Tutorial",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Tutorial title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of what the tutorial covers"
+    },
+    "programming_language": {
+      "type": "string",
+      "enum": [
+        "python",
+        "javascript",
+        "java",
+        "cpp",
+        "html_css",
+        "general"
+      ]
+    },
+    "difficulty_level": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "default": "beginner"
+    },
+    "concepts_covered": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Programming concepts this tutorial teaches"
+    },
+    "content": {
+      "type": "string",
+      "description": "Tutorial content in markdown format"
+    },
+    "example_code": {
+      "type": "string",
+      "description": "Example code for hands-on practice"
+    },
+    "common_errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "fix": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Common errors students encounter"
+    },
+    "estimated_duration": {
+      "type": "number",
+      "description": "Estimated completion time in minutes"
+    },
+    "order_index": {
+      "type": "number",
+ 
